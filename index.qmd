@@ -1,0 +1,153 @@
+
+# Normes éditoriales
+
+Les normes éditoriales des articles méthodologiques Rzines sont consultables [ici](https://rzine.fr/documentation/normes/).
+
+
+# Rédiger un article
+
+
+## Template Quarto
+
+Un modèle de mise Quarto[^1] est [mis à disposition sur GitHub](https://github.com/rzine-reviews/rzine-article-template).
+
+Pour le récupérer en ligne de commande :
+
+
+```bash
+quarto use template rzine-reviews/rzine-article-template
+```
+
+Cela créé un répertoire sur votre machine contenant un fichier Quarto `index.qmd`, prêt à être complété.
+
+[^1]: [https://quarto.org](https://quarto.org)
+
+## Métadonnées
+
+Il n'y a pas d'en-tête (YAML) dans le fichier source de l'article (`index.qmd`). Les métadonnées générales de l'article sont à complétées dans le fichier `_quarto.yml` situé à la racine du répertoire. Renseignez-y le titre, sous-titre, auteur, affiliations, résumé, mots-clefs... 
+
+
+## Documentation
+
+Pour vous guider dans la rédaction d'un article Rzine : [Rédiger un article](https://rzine.fr/documentation/redaction/)
+
+
+## Quelques rappels
+
+### Inclure une image
+
+```{r, echo=T}
+#| fig-align: center
+#| fig-cap: "Image 1 : logo Rzine"
+#| fig-cap-location: top
+#| out.width: 300px
+
+knitr::include_graphics("figures/logo.png") # lien vers le fichier image
+```
+
+### Insérer un tableau
+
+```{r, echo=T}
+#| tbl-align: center
+#| tbl-cap: Tableau 1
+#| tbl-cap-location: top
+knitr::kable(head(iris))
+```
+
+
+### Options du *chunk*
+
+Quelques exemples : 
+
+
+```{r}
+# Exécute le code du chunk
+#| eval: true
+
+# Affiche le code
+#| echo: true
+
+# Affiche les warnings
+#| warning: true
+
+# Identifiant du chunk
+#| label: fig-1
+
+# Titre de l'image
+#| fig-cap: Un exemple d'image
+
+# Alignement de l'image dans la page
+#| fig-align: left, right, center
+
+# Dimension verticale d'une figure
+#| fig-height: 3
+
+# Dimension horizontale d'une figure
+#| fig-width: 7
+
+# Dimension horizontale d'une image
+#| out.width: 300px
+```
+
+# Compiler l'article 
+
+Dans l'IDE RStudio, cliquez sur le bouton **Render** ou utilisez le raccourci suivant : `Ctrl + Maj + K`
+
+Vous pouvez également utiliser les lignes de commande suivantes :
+
+
+```bash
+quarto render document.qmd --to html
+quarto render document.qmd --to pdf
+```
+
+
+# Soumettre un article
+
+Retrouvez le processus de soumission sur [cette page](https://rzine.fr/documentation/soumission/).
+
+
+# Annexes de l'article
+
+## Données
+
+Tout·e lecteur·ice doit être en mesure de reproduire la démonstration de l’article sans contrainte de réutilisation. 
+L’intégralité des données utilisées doivent obligatoirement être :
+
+* Correctement présentées dans l’article
+* Libre d’utilisation et de diffusion
+* Mises à disposition des lecteur·rice·s, même si ces données sont déjà en libre accès
+* Décrites par des métadonnées (`readme.txt`)
+* Respectueuses du règlement général sur la protection des données
+
+**Toutes les données utilisées dans l’article devront être stockées dans le répertoire data.**
+
+
+## Note de bas de page
+
+N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
+
+[^2]: [https://quarto.org/docs/authoring/markdown-basics.html#footnotes](https://quarto.org/docs/authoring/markdown-basics.html#footnotes)
+
+
+
+## Informations de session
+
+Les informations de votre session doivent être indiquées en fin d'article de cette manière :
+
+```{r session-info}
+sessionInfo()
+```
+
+
+
+## Références bibliographiques
+
+Une bibliographie est attendue (`references.bib`). Elle sert à positionner votre contribution dans le champ thématique et/ou disciplinaire. 
+
+Pour appeler une référence dans le corps du document, utilisez le symbol `@`. Par exemple : @CameronTrivedi2013
+
+La liste de références bibliographiques citées sera automatiquement ajoutée en fin de document :
+
+
+

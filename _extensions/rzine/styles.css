@@ -1,0 +1,27 @@
+/* TODO: Use css to format the HTML output */
+
+.rzine-review{
+  font-size:90%;
+  margin-top:30px;
+
+}
+
+.quarto-title-banner .title{
+   margin-top:5px;
+}
+
+.quarto-title-banner .subtitle{
+   font-size:120%;
+}
+
+.quarto-title-banner a{
+  color:#8192a3;
+}
+
+a{color:#4178BC;}
+h1{color:#4178BC;}
+h2{color:#4178BC;}
+h3{color:#4178BC;}
+h4{color:#4178BC;}
+h5{color:#4178BC;}
+h6{color:#4178BC;}

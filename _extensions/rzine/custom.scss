@@ -1,0 +1,97 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+
+/*******************************************************************************
+ * Variables used throughout the theme.
+ * To adjust anything, simply edit the variables below and rebuild the theme.
+ ******************************************************************************/
+
+// Colors
+$grey-color:          #828282 !default;
+$grey-color-light:    lighten($grey-color, 40%);
+$grey-color-dark:     darken($grey-color, 25%);
+$white-color: #ffffff !default;
+$black-color: #000000 !default;
+$rzine-color:         #034E79 !default;
+$rzine-color-dark:    darken($rzine-color, 10%);
+$rzine-color-light:   lighten($rzine-color, 60%);
+$rzine-color-lighter: rgba($rzine-color, 0.04);
+$rzinetitle-color:    #0C3762 !default;
+
+$rzine-color-yellow:         #797903 !default;
+$rzine-color-red:         #790303 !default;
+
+
+// Theme colors
+$body-color: $grey-color-dark;
+$link-color: $rzine-color;
+
+// Font
+$headings-font-weight: 500 !default;
+$h2-font-size: 1.6rem !default;
+$font-family-sans-serif: 'Montserrat', sans-serif;
+$ff-title: 'Montserrat', sans-serif;
+$ff-main: 'Montserrat', sans-serif;
+
+// Callout
+$callout-border-color: $rzine-color-light !important;
+$callout-color-note: $rzine-color-dark;
+$callout-header-color: $rzine-color-dark;
+$callout-border-width: 5px ;
+
+.callout-header {
+    background-color: $rzine-color-lighter !important;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $rzine-color-dark ;
+}
+
+.theorem, .proposition, .lemma, .corrolary {
+    background-color: $rzine-color-lighter ;
+    border-radius: 4px;
+    border: 1px solid $rzine-color-light;
+    border-left-width: 5px ;
+    border-left-color: $rzine-color-dark ;
+    padding: 2px 4px;
+    margin: 1em 0 ;
+}
+
+.theorem-title {
+  font-family: $ff-title ;
+  color: $rzine-color-dark !important;
+}
+
+.pseudocode {
+  /* avoid parser error in quarto */
+}
+
+// Bad inclusion of TOC if color specified in CSS for title-block-banner
+// Works when using .yml
+// $title-block-banner: $rzine-color ;
+// $title-block-banner-color: $white-color ;
+
+$navbar-bg: $rzine-color;
+$navbar-fg: $white-color;
+$navbar-text-color: $white-color;
+$navbar-hover-color: #{$rzine-color-light};
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: $ff-title ;
+  font-weight: 500;
+  color: var(--rzine-color-dark) !important;
+}
+
+:root {
+    font-size:16px;
+}
+
+.content {
+  text-align: justify;
+}
+
+body {
+  font-size: 1rem;
+  font-weight: 300;
+}

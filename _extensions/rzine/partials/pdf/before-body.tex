@@ -1,0 +1,62 @@
+\definecolor{rzine-blue}{HTML}{0C3762}
+\definecolor{title-blue}{HTML}{C4D6EE}
+\definecolor{title-grey}{HTML}{708090}
+
+
+
+\begin{tikzpicture}[remember picture,overlay]
+\fill[rzine-blue]
+  (current page.north west) -- (current page.north east) --
+  ([yshift=-5cm]current page.north east|-current page.north east) --
+  ([yshift=-5cm]current page.north west|-current page.north west) -- cycle;
+\node[anchor=north west, xshift=.75cm,
+  yshift=-.75cm] at (current page.north west) {\includegraphics[height=3cm]{logo}};
+
+\node[font=\sffamily\bfseries\color{title-blue},anchor=west,
+  xshift=4.25cm,yshift=-2.3cm] at (current page.north west)
+  {\begin{minipage}{15cm}
+    \fontsize{22}{30}\selectfont
+    $title$
+    \vspace{.18cm}
+    \\
+    \fontsize{13}{18}\selectfont
+    $subtitle$
+    \vspace{.5cm}
+    \\
+    \fontsize{10}{18}\color{title-grey}\selectfont {\includegraphics[height=0.35cm]{cc-by}} ISSN 2743-8791 - Rzine.fr - Revue de méthodes pour les SHS  
+    
+  \end{minipage}};
+\end{tikzpicture}
+
+\vspace*{2.5cm}
+\begin{center}
+    $for(by-author)$
+      $if(by-author.name.literal)$$by-author.name.literal$$endif$$if(it.orcid)$~\orcidlink{$it.orcid$}$endif$$if(it.attributes.corresponding)$\footnote{Corresponding author: $if(it.email)$\href{mailto:$it.email$}{$it.email$}$endif$}$endif$\quad
+      $for(by-author.affiliations)$
+       $if(it.department)$$it.department$$if(it.name)$, $endif$$endif$$if(it.name)$$it.name$$endif$$if(it.department)$\\$elseif(it.name)$\\$endif$
+       $endfor$
+    $endfor$
+
+  \bigskip
+  
+  Date de publication: $date$
+\end{center}
+      
+\bigskip
+\begin{abstract}
+$abstract$
+\end{abstract}
+
+$if(keywords)$
+\noindent%
+{\it Keywords:} $for(keywords)$$it$$sep$, $endfor$
+\vfill
+$endif$
+
+$if(draft)$
+% \linenumbers
+\DraftwatermarkOptions{stamp=true, colorspec=0.9, text={\rm submitted}}
+$else$
+\DraftwatermarkOptions{stamp=false}
+$endif$
+

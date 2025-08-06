@@ -1,0 +1,71 @@
+title: Template article Rzine
+author: Rzine CoreTeam
+version: 0.1.0
+quarto-required: ">=1.5.0"
+contributes:
+  formats:
+    common:
+      toc: true
+      number-sections: true
+      anchor-sections: true
+      toc-title: Table des matières
+      code-copy: true
+      code-block-background: true
+      bibliography: references.bib  
+      csl: universite-de-montreal-apa.csl
+      reference-section-title: "Bibliographie"
+      license: "CC BY-SA"
+      css: styles.css
+      date-format: long
+      highlight-style: github
+      shortcodes:
+        # You can include here Lua filters defining shortcodes from your extension
+        - shortcodes.lua
+      citation:
+        type: article-journal
+        container-title: Rzine
+        issn: 2743-8791
+
+    pdf:
+      papersize: a4
+      geometry: 
+        - a4paper
+        - textheight=24cm
+        - textwidth=15.5cm
+      fontsize: 11pt
+      fontfamily: montserrat
+      monofont: montserrat
+      monofontoptions:
+        - Scale=0.92
+      include-in-header:
+        - "partials/pdf/include-in-header.tex"
+      template-partials:
+        - "partials/pdf/before-body.tex"
+      format-resources:
+        - logo.png
+        - cc-by.png
+        
+    html:
+      title-block-banner: "#0c3762"
+      title-block-banner-color: "#C4D6EE"
+      tbl-cap-location: margin
+      cap-location: margin
+      template-partials:
+          - "partials/html/title-block.html"
+          - "partials/html/title-metadata.html"
+      hover-citations: true
+      hover-footnotes: true
+      section-title-footnotes: "Glossaire"
+      fig-format: svg
+      code-summary: "Cacher/Montrer le code"
+      code-fold: false
+      link-external-newwindow: true
+      crossref:
+        sec-prefix: Section
+        eq-prefix: Equation
+        fig-prefix: Figure
+        tbl-prefix: Table
+        html-math-method: katex
+    
+    
+
