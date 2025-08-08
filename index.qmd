@@ -123,23 +123,6 @@ L’intégralité des données utilisées doivent obligatoirement être :
 **Toutes les données utilisées dans l’article devront être stockées dans le répertoire data.**
 
 
-## Note de bas de page
-
-N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
-
-[^2]: [https://quarto.org/docs/authoring/markdown-basics.html#footnotes](https://quarto.org/docs/authoring/markdown-basics.html#footnotes)
-
-
-
-## Informations de session
-
-Les informations de votre session doivent être indiquées en fin d'article de cette manière :
-
-```{r session-info}
-sessionInfo()
-```
-
-
 
 ## Références bibliographiques
 
@@ -150,4 +133,30 @@ Pour appeler une référence dans le corps du document, utilisez le symbol `@`. 
 La liste de références bibliographiques citées sera automatiquement ajoutée en fin de document :
 
 
+# Bibliographie {.unnumbered}
+
+:::{#refs}
+
+:::
+
+
+# Annexes {.unnumbered}
+
+
+## Note de bas de page
+
+N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
+
+[^2]: [https://quarto.org/docs/authoring/markdown-basics.html#footnotes](https://quarto.org/docs/authoring/markdown-basics.html#footnotes)
+
+
+
+##### Informations de session {.unnumbered}
+
+Les informations de votre session doivent être indiquées en fin d'article de cette manière :
+
+```{r session_info, echo=FALSE}
+kableExtra::kable_styling(knitr::kable(rzine::sessionRzine()[[1]], row.names = F))
+kableExtra::kable_styling(knitr::kable(rzine::sessionRzine()[[2]], row.names = F))
+```
 

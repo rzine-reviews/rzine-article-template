@@ -13,7 +13,6 @@ contributes:
       code-block-background: true
       bibliography: references.bib  
       csl: universite-de-montreal-apa.csl
-      reference-section-title: "Bibliographie"
       license: "CC BY-SA"
       css: styles.css
       date-format: long
@@ -37,6 +36,9 @@ contributes:
       monofont: montserrat
       monofontoptions:
         - Scale=0.92
+      lof: true
+      lof-title: "liste des figures"
+      lot: true
       include-in-header:
         - "partials/pdf/include-in-header.tex"
       template-partials:
@@ -53,9 +55,9 @@ contributes:
       template-partials:
           - "partials/html/title-block.html"
           - "partials/html/title-metadata.html"
+      reference-location: document    
       hover-citations: true
       hover-footnotes: true
-      section-title-footnotes: "Glossaire"
       fig-format: svg
       code-summary: "Cacher/Montrer le code"
       code-fold: false
@@ -68,4 +70,5 @@ contributes:
         html-math-method: katex
     
     
+
 
