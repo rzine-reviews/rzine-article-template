@@ -153,10 +153,7 @@ N'hésitez pas à utiliser la fonctionnalité *footnotes*[^2].
 
 ##### Informations de session {.unnumbered}
 
-Les informations de votre session doivent être indiquées en fin d'article de cette manière :
-
 ```{r session_info, echo=FALSE}
-kableExtra::kable_styling(knitr::kable(rzine::sessionRzine()[[1]], row.names = F))
-kableExtra::kable_styling(knitr::kable(rzine::sessionRzine()[[2]], row.names = F))
+sessionInfo()
 ```
 
